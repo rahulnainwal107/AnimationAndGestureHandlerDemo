@@ -2,9 +2,12 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import ButtonsScreen from '../screens/ButtonsScreen';
-import FadeAnimation from '../screens/FadeAnimation';
-import HeaderScrollAnimation from '../screens/HeaderScrollAnimation';
+import {
+  ButtonsScreen,
+  FadeAnimation,
+  HeaderScrollAnimation,
+  SpringAnimation,
+} from '../screens/index';
 
 const Stack = createStackNavigator();
 
@@ -31,6 +34,15 @@ export default function MainRouter() {
           component={HeaderScrollAnimation}
           options={{
             headerTransparent: true,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="SpringAnimation"
+          component={SpringAnimation}
+          options={{
+            headerTransparent: false,
             headerShown: true,
             headerBackTitleVisible: false,
           }}

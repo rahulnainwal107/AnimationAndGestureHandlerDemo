@@ -14,6 +14,10 @@ const ButtonScreen = (props) => {
     navigation.navigate('HeaderScrollAnimation');
   };
 
+  const navigateToSpringAnimation = () => {
+    navigation.navigate('SpringAnimation');
+  };
+
   return (
     <View style={styles.mainView}>
       <ButtonComponent
@@ -23,6 +27,10 @@ const ButtonScreen = (props) => {
       <ButtonComponent
         onPress={navigateToHeaderScrollAnimation}
         buttonName="Header Scroll Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToSpringAnimation}
+        buttonName="Spring Animation"
       />
     </View>
   );

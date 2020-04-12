@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {Animated, Text, View, Easing} from 'react-native';
+import {Animated, Text, View, Image} from 'react-native';
 
 const FadeInView = (props) => {
-  const [fadeAnim] = useState(new Animated.Value(0)); // Initial value for opacity: 0
+  const [fadeAnim] = useState(new Animated.Value(0.3)); // Initial value for opacity: 0
 
   /***
    Animated API provides three type of animations :
@@ -11,12 +11,11 @@ const FadeInView = (props) => {
    3 - Animated.timing() animates a value over time using easing functions.
    */
   useEffect(() => {
-    // Here we are using Animated.timing
-    Animated.timing(fadeAnim, {
+    // Here we are using Animated.spring
+    Animated.spring(fadeAnim, {
       toValue: 1,
-      duration: 10000,
+      friction: 1,
       useNativeDriver: true,
-      //easing: Easing.circle,
     }).start();
   }, []);
 
@@ -24,7 +23,7 @@ const FadeInView = (props) => {
     <Animated.View // Special animatable View
       style={{
         ...props.style,
-        opacity: fadeAnim, // Bind opacity to animated value
+        transform: [{scale: fadeAnim}],
       }}>
       {props.children}
     </Animated.View>
@@ -32,15 +31,9 @@ const FadeInView = (props) => {
 };
 
 // You can then use your `FadeInView` in place of a `View` in your components:
-export default FadeAnimation = () => {
+export default SpringAnimation = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginHorizontal: 10,
-      }}>
+    <View style={{justifyContent: 'center', flex: 1, marginHorizontal: 10}}>
       <Text>
         Animated API provides three type of animations :{'\n'}1 -
         Animated.decay() starts with an initial velocity and gradually slows to
@@ -49,12 +42,25 @@ export default FadeAnimation = () => {
         easing functions.
       </Text>
       <Text>Here we are using Animated.timing</Text>
-      <FadeInView
-        style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
-        <Text style={{fontSize: 28, textAlign: 'center', margin: 10}}>
-          Fading in
-        </Text>
-      </FadeInView>
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <FadeInView style={{width: 250, height: 50}}>
+          <Image
+            style={{
+              width: 227,
+              height: 200,
+            }}
+            source={{
+              uri:
+                'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png',
+            }}
+          />
+        </FadeInView>
+      </View>
     </View>
   );
 };
