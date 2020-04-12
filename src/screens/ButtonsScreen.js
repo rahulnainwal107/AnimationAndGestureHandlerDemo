@@ -10,11 +10,19 @@ const ButtonScreen = (props) => {
     navigation.navigate('FadeAnimation');
   };
 
+  const navigateToHeaderScrollAnimation = () => {
+    navigation.navigate('HeaderScrollAnimation');
+  };
+
   return (
     <View style={styles.mainView}>
       <ButtonComponent
         onPress={navigateToFadeAnimation}
         buttonName="Fade Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToHeaderScrollAnimation}
+        buttonName="Header Scroll Animation"
       />
     </View>
   );
