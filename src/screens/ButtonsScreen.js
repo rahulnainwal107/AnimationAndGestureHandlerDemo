@@ -3,10 +3,19 @@ import {View, StyleSheet} from 'react-native';
 
 import ButtonComponent from '../components/ButtonComponent';
 
-const ButtonScreen = () => {
+const ButtonScreen = (props) => {
+  const {navigation} = props;
+
+  const navigateToFadeAnimation = () => {
+    navigation.navigate('FadeAnimation');
+  };
+
   return (
     <View style={styles.mainView}>
-      <ButtonComponent onPress={null} buttonName="Test Button" />
+      <ButtonComponent
+        onPress={navigateToFadeAnimation}
+        buttonName="Fade Animation"
+      />
     </View>
   );
 };
