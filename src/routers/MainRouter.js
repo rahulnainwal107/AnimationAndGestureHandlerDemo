@@ -7,6 +7,7 @@ import {
   FadeAnimation,
   HeaderScrollAnimation,
   SpringAnimation,
+  EasingDemo,
 } from '../screens/index';
 
 const Stack = createStackNavigator();
@@ -41,6 +42,15 @@ export default function MainRouter() {
         <Stack.Screen
           name="SpringAnimation"
           component={SpringAnimation}
+          options={{
+            headerTransparent: false,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="EasingDemo"
+          component={EasingDemo}
           options={{
             headerTransparent: false,
             headerShown: true,

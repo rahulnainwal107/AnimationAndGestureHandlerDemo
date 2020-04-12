@@ -18,6 +18,10 @@ const ButtonScreen = (props) => {
     navigation.navigate('SpringAnimation');
   };
 
+  const navigateToEasingDemo = () => {
+    navigation.navigate('EasingDemo');
+  };
+
   return (
     <View style={styles.mainView}>
       <ButtonComponent
@@ -31,6 +35,10 @@ const ButtonScreen = (props) => {
       <ButtonComponent
         onPress={navigateToSpringAnimation}
         buttonName="Spring Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToEasingDemo}
+        buttonName="Easing Demo"
       />
     </View>
   );
