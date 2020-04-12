@@ -4,6 +4,7 @@ import HeaderScrollAnimation from './HeaderScrollAnimation';
 import SpringAnimation from './SpringAnimation';
 import EasingDemo from './EasingDemo';
 import AnimationUsingTiming from './AnimationUsingTiming';
+import MultipleAnimationUsingTiming from './MultipleAnimationUsingTiming';
 
 export {
   ButtonsScreen,
@@ -12,4 +13,5 @@ export {
   SpringAnimation,
   EasingDemo,
   AnimationUsingTiming,
+  MultipleAnimationUsingTiming,
 };

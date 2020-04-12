@@ -24,8 +24,8 @@ const AnimationUsingTiming = () => {
   });
 
   const opacityValue = spinValue.interpolate({
-    inputRange: [0, 1],
-    outputRange: [1, 0],
+    inputRange: [0, 0.5, 1],
+    outputRange: [1, 0, 1],
   });
 
   return (

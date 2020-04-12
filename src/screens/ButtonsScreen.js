@@ -25,6 +25,10 @@ const ButtonScreen = (props) => {
   const navigateToAnimationUsingTiming = () => {
     navigation.navigate('AnimationUsingTiming');
   };
+
+  const navigateToMultipleAnimationUsingTiming = () => {
+    navigation.navigate('MultipleAnimationUsingTiming');
+  };
   return (
     <View style={styles.mainView}>
       <ButtonComponent
@@ -46,6 +50,10 @@ const ButtonScreen = (props) => {
       <ButtonComponent
         onPress={navigateToAnimationUsingTiming}
         buttonName="Animation Using Timing"
+      />
+      <ButtonComponent
+        onPress={navigateToMultipleAnimationUsingTiming}
+        buttonName="Multiple Animation Using Timing"
       />
     </View>
   );
