@@ -5,6 +5,7 @@ import SpringAnimation from './SpringAnimation';
 import EasingDemo from './EasingDemo';
 import AnimationUsingTiming from './AnimationUsingTiming';
 import MultipleAnimationUsingTiming from './MultipleAnimationUsingTiming';
+import ParallelAnimation from './ParallelAnimation';
 
 export {
   ButtonsScreen,
@@ -14,4 +15,5 @@ export {
   EasingDemo,
   AnimationUsingTiming,
   MultipleAnimationUsingTiming,
+  ParallelAnimation,
 };

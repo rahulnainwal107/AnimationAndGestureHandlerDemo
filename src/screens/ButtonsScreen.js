@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {ScrollView, StyleSheet} from 'react-native';
 
 import ButtonComponent from '../components/ButtonComponent';
 
@@ -29,8 +29,13 @@ const ButtonScreen = (props) => {
   const navigateToMultipleAnimationUsingTiming = () => {
     navigation.navigate('MultipleAnimationUsingTiming');
   };
+
+  const navigateToParallelAnimation = () => {
+    navigation.navigate('ParallelAnimation');
+  };
+
   return (
-    <View style={styles.mainView}>
+    <ScrollView style={styles.mainView}>
       <ButtonComponent
         onPress={navigateToFadeAnimation}
         buttonName="Fade Animation"
@@ -55,7 +60,11 @@ const ButtonScreen = (props) => {
         onPress={navigateToMultipleAnimationUsingTiming}
         buttonName="Multiple Animation Using Timing"
       />
-    </View>
+      <ButtonComponent
+        onPress={navigateToParallelAnimation}
+        buttonName="Parallel Animation"
+      />
+    </ScrollView>
   );
 };
 

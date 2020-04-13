@@ -10,6 +10,7 @@ import {
   EasingDemo,
   AnimationUsingTiming,
   MultipleAnimationUsingTiming,
+  ParallelAnimation,
 } from '../screens/index';
 
 const Stack = createStackNavigator();
@@ -71,6 +72,15 @@ export default function MainRouter() {
         <Stack.Screen
           name="MultipleAnimationUsingTiming"
           component={MultipleAnimationUsingTiming}
+          options={{
+            headerTransparent: false,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="ParallelAnimation"
+          component={ParallelAnimation}
           options={{
             headerTransparent: false,
             headerShown: true,
