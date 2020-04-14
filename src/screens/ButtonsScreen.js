@@ -34,6 +34,14 @@ const ButtonScreen = (props) => {
     navigation.navigate('ParallelAnimation');
   };
 
+  const navigateToSequenceAnimation = () => {
+    navigation.navigate('SequenceAnimation');
+  };
+
+  const navigateToStaggerAnimated = () => {
+    navigation.navigate('StaggerAnimated');
+  };
+
   return (
     <ScrollView style={styles.mainView}>
       <ButtonComponent
@@ -63,6 +71,14 @@ const ButtonScreen = (props) => {
       <ButtonComponent
         onPress={navigateToParallelAnimation}
         buttonName="Parallel Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToSequenceAnimation}
+        buttonName="SequenceAnimation"
+      />
+      <ButtonComponent
+        onPress={navigateToStaggerAnimated}
+        buttonName="StaggerAnimated"
       />
     </ScrollView>
   );

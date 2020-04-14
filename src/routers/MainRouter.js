@@ -11,6 +11,8 @@ import {
   AnimationUsingTiming,
   MultipleAnimationUsingTiming,
   ParallelAnimation,
+  SequenceAnimation,
+  StaggerAnimated,
 } from '../screens/index';
 
 const Stack = createStackNavigator();
@@ -81,6 +83,24 @@ export default function MainRouter() {
         <Stack.Screen
           name="ParallelAnimation"
           component={ParallelAnimation}
+          options={{
+            headerTransparent: false,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="SequenceAnimation"
+          component={SequenceAnimation}
+          options={{
+            headerTransparent: false,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="StaggerAnimated"
+          component={StaggerAnimated}
           options={{
             headerTransparent: false,
             headerShown: true,

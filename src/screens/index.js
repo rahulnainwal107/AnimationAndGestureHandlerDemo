@@ -6,6 +6,8 @@ import EasingDemo from './EasingDemo';
 import AnimationUsingTiming from './AnimationUsingTiming';
 import MultipleAnimationUsingTiming from './MultipleAnimationUsingTiming';
 import ParallelAnimation from './ParallelAnimation';
+import SequenceAnimation from './SequenceAnimation';
+import StaggerAnimated from './StaggerAnimated';
 
 export {
   ButtonsScreen,
@@ -16,4 +18,6 @@ export {
   AnimationUsingTiming,
   MultipleAnimationUsingTiming,
   ParallelAnimation,
+  SequenceAnimation,
+  StaggerAnimated,
 };
