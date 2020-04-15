@@ -8,6 +8,8 @@ import MultipleAnimationUsingTiming from './MultipleAnimationUsingTiming';
 import ParallelAnimation from './ParallelAnimation';
 import SequenceAnimation from './SequenceAnimation';
 import StaggerAnimated from './StaggerAnimated';
+import ImageScalingAnimation from './ImageScalingAnimation';
+import ContinuesImageScalingAnimation from './ContinuesImageScalingAnimation';
 
 export {
   ButtonsScreen,
@@ -20,4 +22,6 @@ export {
   ParallelAnimation,
   SequenceAnimation,
   StaggerAnimated,
+  ImageScalingAnimation,
+  ContinuesImageScalingAnimation,
 };

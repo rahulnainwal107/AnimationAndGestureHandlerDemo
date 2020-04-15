@@ -42,6 +42,13 @@ const ButtonScreen = (props) => {
     navigation.navigate('StaggerAnimated');
   };
 
+  const navigateToImageScalingAnimation = () => {
+    navigation.navigate('ImageScalingAnimation');
+  };
+
+  const navigateToContinuesImageScalingAnimation = () => {
+    navigation.navigate('ContinuesImageScalingAnimation');
+  };
   return (
     <ScrollView style={styles.mainView}>
       <ButtonComponent
@@ -74,11 +81,19 @@ const ButtonScreen = (props) => {
       />
       <ButtonComponent
         onPress={navigateToSequenceAnimation}
-        buttonName="SequenceAnimation"
+        buttonName="Sequence Animation"
       />
       <ButtonComponent
         onPress={navigateToStaggerAnimated}
-        buttonName="StaggerAnimated"
+        buttonName="Stagger Animated"
+      />
+      <ButtonComponent
+        onPress={navigateToImageScalingAnimation}
+        buttonName="Image Scaling Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToContinuesImageScalingAnimation}
+        buttonName="Continues Image Scaling Animation"
       />
     </ScrollView>
   );
