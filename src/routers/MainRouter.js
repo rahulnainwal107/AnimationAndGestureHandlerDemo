@@ -15,6 +15,7 @@ import {
   StaggerAnimated,
   ImageScalingAnimation,
   ContinuesImageScalingAnimation,
+  RippleAnimation,
 } from '../screens/index';
 
 const Stack = createStackNavigator();
@@ -121,6 +122,15 @@ export default function MainRouter() {
         <Stack.Screen
           name="ContinuesImageScalingAnimation"
           component={ContinuesImageScalingAnimation}
+          options={{
+            headerTransparent: false,
+            headerShown: true,
+            headerBackTitleVisible: false,
+          }}
+        />
+        <Stack.Screen
+          name="RippleAnimation"
+          component={RippleAnimation}
           options={{
             headerTransparent: false,
             headerShown: true,

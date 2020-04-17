@@ -10,6 +10,7 @@ import SequenceAnimation from './SequenceAnimation';
 import StaggerAnimated from './StaggerAnimated';
 import ImageScalingAnimation from './ImageScalingAnimation';
 import ContinuesImageScalingAnimation from './ContinuesImageScalingAnimation';
+import RippleAnimation from './RippleAnimation';
 
 export {
   ButtonsScreen,
@@ -24,4 +25,5 @@ export {
   StaggerAnimated,
   ImageScalingAnimation,
   ContinuesImageScalingAnimation,
+  RippleAnimation,
 };

@@ -49,6 +49,9 @@ const ButtonScreen = (props) => {
   const navigateToContinuesImageScalingAnimation = () => {
     navigation.navigate('ContinuesImageScalingAnimation');
   };
+  const navigateToRippleAnimation = () => {
+    navigation.navigate('RippleAnimation');
+  };
   return (
     <ScrollView style={styles.mainView}>
       <ButtonComponent
@@ -94,6 +97,10 @@ const ButtonScreen = (props) => {
       <ButtonComponent
         onPress={navigateToContinuesImageScalingAnimation}
         buttonName="Continues Image Scaling Animation"
+      />
+      <ButtonComponent
+        onPress={navigateToRippleAnimation}
+        buttonName="Ripple Animation"
       />
     </ScrollView>
   );
