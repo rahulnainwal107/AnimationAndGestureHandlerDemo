@@ -4,6 +4,7 @@ This repo is all about animation and gesture handler in react-native. It consist
 <b>Project configuration and used library:</b></br>
 ````
 "@react-native-community/masked-view": "^0.1.8",
+"@react-navigation/bottom-tabs": "^5.2.7",
 "@react-navigation/native": "^5.1.5",
 "@react-navigation/stack": "^5.2.10",
 "react": "16.11.0",
