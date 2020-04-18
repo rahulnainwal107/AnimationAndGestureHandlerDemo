@@ -36,7 +36,7 @@ const ContinuesImageScalingAnimation = () => {
     <View style={styles.mainView}>
       <View style={styles.containerView}>
         <Animated.Image
-          source={require('../assets/cat.jpg')}
+          source={require('../../assets/cat.jpg')}
           style={[
             styles.imageStyle,
             {

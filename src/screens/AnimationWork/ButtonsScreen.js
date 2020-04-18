@@ -1,7 +1,7 @@
 import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 
-import ButtonComponent from '../components/ButtonComponent';
+import ButtonComponent from '../../components/ButtonComponent';
 
 const ButtonScreen = (props) => {
   const {navigation} = props;

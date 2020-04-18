@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Animated, StyleSheet, Easing, Image} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import Colors from '../theme/Colors';
+import Colors from '../../theme/Colors';
 
 const ContinuesRippleAnimation = () => {
   const animatedValue = new Animated.Value(0);
@@ -81,7 +81,7 @@ const ContinuesRippleAnimation = () => {
           },
         ]}>
         <Animated.Image
-          source={require('../assets/cat.jpg')}
+          source={require('../../assets/cat.jpg')}
           style={[
             styles.imageStyle,
             {

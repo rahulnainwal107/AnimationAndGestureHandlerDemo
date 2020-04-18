@@ -9,14 +9,14 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 
-import MainRouter from './src/routers/MainRouter';
+import BottomTabRouter from './src/routers/BottomTabRouter';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView style={{flex: 1}}>
-        <MainRouter />
+        <BottomTabRouter />
       </SafeAreaView>
     </>
   );

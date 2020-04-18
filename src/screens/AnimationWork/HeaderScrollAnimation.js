@@ -119,7 +119,7 @@ export default class HeaderScrollAnimation extends Component {
                 transform: [{translateY: imageTranslate}],
               },
             ]}
-            source={require('../assets/cat.jpg')}
+            source={require('../../assets/cat.jpg')}
           />
         </Animated.View>
         <Animated.View
@@ -128,8 +128,7 @@ export default class HeaderScrollAnimation extends Component {
             {
               transform: [{scale: titleScale}, {translateY: titleTranslate}],
             },
-          ]}>
-        </Animated.View>
+          ]}></Animated.View>
       </View>
     );
   }
