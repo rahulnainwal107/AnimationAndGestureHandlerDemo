@@ -17,9 +17,9 @@ const ContinuesRippleAnimation = () => {
 
   const randomColor2 = () => {
     console.log('2');
-    return `rgb(${Math.floor(Math.random() * 255)},${Math.floor(
+    return `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
       Math.random() * 255,
-    )},${Math.floor(Math.random() * 255)})`;
+    )},${Math.floor(Math.random() * 255)},${0.1})`;
   };
 
   const animated = () => {
@@ -74,8 +74,9 @@ const ContinuesRippleAnimation = () => {
             // }),
             backgroundColor: animatedValue.interpolate({
               inputRange: [0, 1],
-              outputRange: ['#028C26', '#C4F9D2'],
+              //outputRange: ['#028C26', '#C4F9D2'],
               //outputRange: [color1, color2],
+              outputRange: [randomColor1(), randomColor2()],
             }),
           },
         ]}>
