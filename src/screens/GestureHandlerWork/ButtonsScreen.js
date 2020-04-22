@@ -1,11 +1,28 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 
-const ButtonsScreen = () => {
+import ButtonComponent from '../../components/ButtonComponent';
+
+const ButtonsScreen = ({navigation}) => {
+  const navigateToStateOfGestureHandler = () => {
+    navigation.navigate('StateOfGestureHandler');
+  };
+
+  const navigateToPanGestureHandler = () => {
+    navigation.navigate('PanGestureHandler');
+  };
+
   return (
-    <View>
-      <Text>Button Screen</Text>
-    </View>
+    <ScrollView>
+      <ButtonComponent
+        onPress={navigateToStateOfGestureHandler}
+        buttonName="State Of GestureHandler"
+      />
+      <ButtonComponent
+        onPress={navigateToPanGestureHandler}
+        buttonName="Pan GestureHandler"
+      />
+    </ScrollView>
   );
 };
 
