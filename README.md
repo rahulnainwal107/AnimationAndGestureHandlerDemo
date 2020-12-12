@@ -17,8 +17,8 @@ This repo is all about animation and gesture handler in react-native. It consist
 ````
 <b>How to run</b></br>
 
-1- use <b>git clone</b> to copy the repository.</br>
-2- cd AnimationAndGestureHandlerDemo.</br>
+1- Use <b>git clone</b> to copy the repository.</br>
+2- Then cd AnimationAndGestureHandlerDemo.</br>
 3- <b>npm i</b> or <b>yarn add</b></br>
 
 Enjoy the code 🚀
