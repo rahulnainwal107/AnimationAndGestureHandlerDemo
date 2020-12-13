@@ -12,6 +12,7 @@ import ImageScalingAnimation from './ImageScalingAnimation';
 import ContinuesImageScalingAnimation from './ContinuesImageScalingAnimation';
 import RippleAnimation from './RippleAnimation';
 import ContinuesRippleAnimation from './ContinuesRippleAnimation';
+import MoveBall from './MoveBall';
 
 export {
   ButtonsScreen,
@@ -28,4 +29,5 @@ export {
   ContinuesImageScalingAnimation,
   RippleAnimation,
   ContinuesRippleAnimation,
+  MoveBall,
 };
