@@ -61,6 +61,10 @@ const ButtonScreen = (props) => {
   const navigateToMoveBall = () => {
     navigation.navigate('MoveBall');
   };
+
+  const navigateToSwipEffect = () => {
+    navigation.navigate('SwipEffect');
+  };
   return (
     <ScrollView style={styles.mainView}>
       <ButtonComponent
@@ -116,6 +120,10 @@ const ButtonScreen = (props) => {
         buttonName="Continues Ripple Animation"
       />
       <ButtonComponent onPress={navigateToMoveBall} buttonName="Move Ball" />
+      <ButtonComponent
+        onPress={navigateToSwipEffect}
+        buttonName="Swip Effect"
+      />
     </ScrollView>
   );
 };

@@ -17,6 +17,7 @@ import {
   RippleAnimation,
   ContinuesRippleAnimation,
   MoveBall,
+  SwipEffect,
 } from '../screens/AnimationWork/index';
 
 const Stack = createStackNavigator();
@@ -149,6 +150,15 @@ export default function MainRouter() {
       <Stack.Screen
         name="MoveBall"
         component={MoveBall}
+        options={{
+          headerTransparent: false,
+          headerShown: true,
+          headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="SwipEffect"
+        component={SwipEffect}
         options={{
           headerTransparent: false,
           headerShown: true,

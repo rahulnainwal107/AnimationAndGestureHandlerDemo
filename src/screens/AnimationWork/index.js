@@ -13,6 +13,7 @@ import ContinuesImageScalingAnimation from './ContinuesImageScalingAnimation';
 import RippleAnimation from './RippleAnimation';
 import ContinuesRippleAnimation from './ContinuesRippleAnimation';
 import MoveBall from './MoveBall';
+import SwipEffect from './SwipEffect';
 
 export {
   ButtonsScreen,
@@ -30,4 +31,5 @@ export {
   RippleAnimation,
   ContinuesRippleAnimation,
   MoveBall,
+  SwipEffect,
 };
