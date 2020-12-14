@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  PanResponder,
+  Animated,
+} from 'react-native';
 
 import SwipComponent from '../../components/SwipComponent';
 import ButtonComponent from '../../components/ButtonComponent';
@@ -44,14 +51,25 @@ const DATA = [
   {
     id: 8,
     text: 'Card #8',
-    uri: '../../assets/a8.jpg',
+    uri: require('../../assets/a8.jpeg'),
   },
 ];
 
 const SwipEffect = () => {
+  const position = new Animated.ValueXY();
+  const panResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onPanResponderMove: (event, gesture) => {
+      position.setValue({x: gesture.dx, y: gesture.dy});
+    },
+    onPanResponderRelease: (event, gesture) => {},
+  });
   const renderItem = (item) => {
     return (
-      <View key={item.id} style={styles.cardContainer}>
+      <Animated.View
+        key={item.id}
+        style={[position.getLayout(), styles.cardContainer]}
+        {...panResponder.panHandlers}>
         <Image source={item.uri} style={styles.imageStyle} />
         <Text style={styles.textStyle}>{item.text}</Text>
         <Text style={styles.textStyle}>I can customize the card further.</Text>
@@ -59,7 +77,7 @@ const SwipEffect = () => {
           buttonName="View Now!"
           buttonStyle={styles.buttonStyle}
         />
-      </View>
+      </Animated.View>
     );
   };
 
