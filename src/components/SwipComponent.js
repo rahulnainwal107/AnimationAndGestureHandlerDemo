@@ -82,7 +82,10 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
       return (
         <Animated.View
           key={item.id}
-          style={[styles.mainContainer, {zIndex: 5}]}>
+          style={[
+            styles.mainContainer,
+            {zIndex: 5, top: index * (index - currentIndex)},
+          ]}>
           {renderCard(item)}
         </Animated.View>
       );
