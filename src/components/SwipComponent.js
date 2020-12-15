@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text, PanResponder, Animated} from 'react-native';
+import {View, Text, PanResponder, Animated, Dimensions} from 'react-native';
+
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
   const position = new Animated.ValueXY();
@@ -12,7 +14,11 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
   });
 
   const getCardStyle = () => {
-    return {...position.getLayout(), transform: [{rotate: '120deg'}]};
+    const rotate = position.x.interpolate({
+      inputRange: [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
+      outputRange: ['-120deg', '0deg', '120deg'],
+    });
+    return {...position.getLayout(), transform: [{rotate: rotate}]};
   };
 
   return data.map((item, index) => {
