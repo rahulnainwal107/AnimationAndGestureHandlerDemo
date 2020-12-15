@@ -65,10 +65,15 @@ const SwipEffect = () => {
 
   const renderNoMoreCards = () => {
     return (
-      <Card title="All Done!">
-        <Text style={{marginBottom: 10}}>There's no more content here!</Text>
-        <Button backgroundColor="#03A9F4" title="Get more!" />
-      </Card>
+      <View style={styles.cardContainer}>
+        <Text style={{marginVertical: 50, textAlign: 'center'}}>
+          There's no more content here!
+        </Text>
+        <ButtonComponent
+          buttonName="Get more!"
+          buttonStyle={styles.buttonStyle}
+        />
+      </View>
     );
   };
 

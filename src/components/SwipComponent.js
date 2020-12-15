@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, PanResponder, Animated, Dimensions} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -6,6 +6,7 @@ const SWIP_THRESHOLD = SCREEN_WIDTH * 0.25;
 const SWIP_OUT_DURATION = 250;
 
 const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
+  const [currentIndex, setCurrentState] = useState(0);
   const position = new Animated.ValueXY();
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
@@ -29,7 +30,12 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
       toValue: {x, y: 0},
       duration: SWIP_OUT_DURATION,
       useNativeDriver: false,
-    }).start();
+    }).start(() => onSwipComplete());
+  };
+
+  const onSwipComplete = () => {
+    position.setValue({x: 0, y: 0});
+    setCurrentState(currentIndex + 1);
   };
 
   const getCardStyle = () => {
@@ -47,8 +53,15 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
     }).start();
   };
 
+  if (currentIndex >= data.length) {
+    return renderNoMoreCards();
+  }
+
   return data.map((item, index) => {
-    if (index === 0) {
+    if (index < currentIndex) {
+      return null;
+    }
+    if (index === currentIndex) {
       return (
         <Animated.View
           key={item.id}
