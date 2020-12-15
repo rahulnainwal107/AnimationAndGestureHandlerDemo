@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, PanResponder, Animated, Dimensions} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
+const SWIP_THRESHOLD = SCREEN_WIDTH * 0.25;
+const SWIP_OUT_DURATION = 250;
 
 const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
   const position = new Animated.ValueXY();
@@ -11,9 +13,24 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
       position.setValue({x: gesture.dx, y: gesture.dy});
     },
     onPanResponderRelease: (event, gesture) => {
-      resetPosition();
+      if (gesture.dx > SWIP_THRESHOLD) {
+        forceSwipeOut('right');
+      } else if (gesture.dx < -SWIP_THRESHOLD) {
+        forceSwipeOut('left');
+      } else {
+        resetPosition();
+      }
     },
   });
+
+  const forceSwipeOut = (direction) => {
+    const x = direction === 'right' ? SCREEN_WIDTH : -SCREEN_WIDTH;
+    Animated.timing(position, {
+      toValue: {x, y: 0},
+      duration: SWIP_OUT_DURATION,
+      useNativeDriver: false,
+    }).start();
+  };
 
   const getCardStyle = () => {
     const rotate = position.x.interpolate({
