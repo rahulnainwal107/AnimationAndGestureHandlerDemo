@@ -51,7 +51,7 @@ const DATA = [
 const SwipEffect = () => {
   const renderCard = (item) => {
     return (
-      <View key={item.id} style={styles.cardContainer}>
+      <View style={styles.cardContainer}>
         <Image source={item.uri} style={styles.imageStyle} />
         <Text style={styles.textStyle}>{item.text}</Text>
         <Text style={styles.textStyle}>I can customize the card further.</Text>
@@ -66,7 +66,7 @@ const SwipEffect = () => {
   const renderNoMoreCards = () => {
     return (
       <View style={styles.cardContainer}>
-        <Text style={{marginVertical: 50, textAlign: 'center'}}>
+        <Text style={styles.noMoreCardTextStyle}>
           There's no more content here!
         </Text>
         <ButtonComponent
@@ -112,5 +112,9 @@ const styles = StyleSheet.create({
   buttonStyle: {
     margin: 0,
     backgroundColor: Colors.green,
+  },
+  noMoreCardTextStyle: {
+    marginVertical: 50,
+    textAlign: 'center',
   },
 });

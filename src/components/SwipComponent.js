@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, Text, PanResponder, Animated, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  PanResponder,
+  Animated,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SWIP_THRESHOLD = SCREEN_WIDTH * 0.25;
@@ -57,22 +64,37 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
     return renderNoMoreCards();
   }
 
-  return data.map((item, index) => {
-    if (index < currentIndex) {
-      return null;
-    }
-    if (index === currentIndex) {
+  return data
+    .map((item, index) => {
+      if (index < currentIndex) {
+        return null;
+      }
+      if (index === currentIndex) {
+        return (
+          <Animated.View
+            key={item.id}
+            style={[getCardStyle(), styles.mainContainer, {zIndex: 99}]}
+            {...panResponder.panHandlers}>
+            {renderCard(item)}
+          </Animated.View>
+        );
+      }
       return (
         <Animated.View
           key={item.id}
-          style={getCardStyle()}
-          {...panResponder.panHandlers}>
+          style={[styles.mainContainer, {zIndex: 5}]}>
           {renderCard(item)}
         </Animated.View>
       );
-    }
-    return renderCard(item);
-  });
+    })
+    .reverse();
 };
 
 export default SwipComponent;
+
+const styles = StyleSheet.create({
+  mainContainer: {
+    position: 'absolute',
+    width: SCREEN_WIDTH,
+  },
+});
