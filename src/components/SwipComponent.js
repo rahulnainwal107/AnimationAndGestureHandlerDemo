@@ -10,7 +10,9 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
     onPanResponderMove: (event, gesture) => {
       position.setValue({x: gesture.dx, y: gesture.dy});
     },
-    onPanResponderRelease: (event, gesture) => {},
+    onPanResponderRelease: (event, gesture) => {
+      resetPosition();
+    },
   });
 
   const getCardStyle = () => {
@@ -19,6 +21,13 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
       outputRange: ['-120deg', '0deg', '120deg'],
     });
     return {...position.getLayout(), transform: [{rotate: rotate}]};
+  };
+
+  const resetPosition = () => {
+    Animated.spring(position, {
+      toValue: {x: 0, y: 0},
+      useNativeDriver: false,
+    }).start();
   };
 
   return data.map((item, index) => {
