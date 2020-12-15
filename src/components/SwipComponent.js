@@ -11,12 +11,16 @@ const SwipComponent = ({data, renderCard, renderNoMoreCards}) => {
     onPanResponderRelease: (event, gesture) => {},
   });
 
+  const getCardStyle = () => {
+    return {...position.getLayout(), transform: [{rotate: '120deg'}]};
+  };
+
   return data.map((item, index) => {
     if (index === 0) {
       return (
         <Animated.View
           key={item.id}
-          style={[position.getLayout()]}
+          style={getCardStyle()}
           {...panResponder.panHandlers}>
           {renderCard(item)}
         </Animated.View>
