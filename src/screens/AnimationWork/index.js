@@ -14,6 +14,7 @@ import RippleAnimation from './RippleAnimation';
 import ContinuesRippleAnimation from './ContinuesRippleAnimation';
 import MoveBall from './MoveBall';
 import SwipEffect from './SwipEffect';
+import FlipCard from './FlipCard';
 
 export {
   ButtonsScreen,
@@ -32,4 +33,5 @@ export {
   ContinuesRippleAnimation,
   MoveBall,
   SwipEffect,
+  FlipCard,
 };

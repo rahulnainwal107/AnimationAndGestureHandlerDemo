@@ -65,6 +65,10 @@ const ButtonScreen = (props) => {
   const navigateToSwipEffect = () => {
     navigation.navigate('SwipEffect');
   };
+
+  const navigateToFlipCard = () => {
+    navigation.navigate('FlipCard');
+  };
   return (
     <ScrollView style={styles.mainView}>
       <ButtonComponent
@@ -124,6 +128,7 @@ const ButtonScreen = (props) => {
         onPress={navigateToSwipEffect}
         buttonName="Swip Effect"
       />
+      <ButtonComponent onPress={navigateToFlipCard} buttonName="Flip Card" />
     </ScrollView>
   );
 };
